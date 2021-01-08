@@ -1,8 +1,8 @@
-FROM node:10 AS server-build
-WORKDIR /root/
-COPY .  ./stdapp-dbapi
-RUN cd ./stdapp-dbapi
+FROM node:10
+RUN mkdir =-p /root/backend
+WORKDIR /root/backend
+COPY package.json /root/backend/
 RUN npm install
-WORKDIR /root/stdapp-dbapi
-CMD ["npm","start"]
+COPY . /root/backend
 EXPOSE 3000
+CMD ["node", "server.js"]
