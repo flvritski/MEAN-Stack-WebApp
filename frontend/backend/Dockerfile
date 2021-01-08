@@ -1,5 +1,5 @@
 FROM node:10
-RUN mkdir =-p /root/backend
+RUN mkdir -p /root/backend
 WORKDIR /root/backend
 COPY package.json /root/backend/
 RUN npm install
