@@ -1,0 +1,13 @@
+version: '3.0'
+
+#Define the services/containers to be run
+services:
+  angular:
+    build: .  # name of the first service
+    ports:
+      - "4200:4200"  # specify port mapping
+
+  express:  #name of the second service
+    build:  backend  # specify the directory of Dockerfile
+    ports:
+      - "3000:3000" # specify port mapping
